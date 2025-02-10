@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background: transparent linear-gradient(180deg, #281eff 0%, #2dff8c 100%) 0%
+    0% no-repeat padding-box;
+  opacity: 1;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.container p {
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+/* .container * {
+  display: block;
+  margin: 0 auto;
+} */
+
+.head {
+  margin-top: 90px;
+  font-family: "Satisfy", regular;
+  top: 90px;
+  left: 21px;
+  width: 328px;
+  height: 93px;
+  text-align: center;
+  font: normal normal normal 60px/86px Satisfy;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-shadow: 0px 0px 36px #00000087;
+  opacity: 1;
+}
+p {
+  font-family: "varela round", regular;
+  margin-bottom: 50px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form input {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ffffff;
+  background: transparent;
+  width: 300px;
+}
+.container label {
+  font-family: "varela round", regular;
+  color: #ffffff;
+  margin-top: 5px;
+  font-size: 11px;
+  margin-left: 250px;
+}
+
+.submit-btn {
+  background: #ffffff;
+  color: #2823fd;
+  width: 300px;
+  margin-top: 20px;
+}
+
+@media (min-width: 1025px) {
+  .unit-a,
+  .unit-b {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* רווח בין השדות */
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
