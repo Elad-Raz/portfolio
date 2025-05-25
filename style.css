@@ -1,0 +1,383 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+/* רשימת עיצובים להוספה:
+   1. רספונסיביות
+   2. במסך גדול: קורסר, הובר, צל והדגשה
+   4. פונט
+   5. רקעים
+   6. מרווחים
+*/
+
+header {
+  position: static;
+  z-index: 1000;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 10px;
+}
+
+nav span {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+nav ul {
+  display: none;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(13, 202, 240);
+}
+
+#page-title {
+  margin-top: 180px;
+}
+
+#page-title,
+#about-me,
+#gallery-header,
+#js-projects,
+#contact {
+  scroll-margin-top: 210px;
+}
+#gallery-header {
+  margin-top: 20px;
+}
+
+.left {
+  direction: ltr;
+}
+
+#check-hamburger {
+  display: none;
+}
+#check-hamburger:checked ~ ul {
+  display: block;
+}
+
+.logo-photo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px 25px;
+}
+
+.logo-name {
+  background-image: url("./pics/name.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+/* -------- Main Content -------- */
+main {
+  text-align: center;
+}
+
+.skills {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  align-items: center;
+  background-color: #fff;
+}
+
+#me-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+aside img {
+  height: 60px;
+  width: 60px;
+}
+
+/* -------- Cards Container -------- */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+/* -------- Contact Section -------- */
+.contact {
+  display: grid;
+  color: #fff;
+  background-color: #333;
+  align-items: center;
+  padding: 20px;
+}
+
+form input,
+form textarea,
+.submit-btn {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 5px;
+  padding: 10px;
+  border-bottom: 3px solid rgb(13, 202, 240);
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  width: 90%;
+  max-width: 200px;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+/* -------- Cards (Project Cards) with Hover Effects -------- */
+.card,
+.card-body {
+  border: 1px solid black;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid black;
+  transition: transform 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* אפקט עדין על כותרת הכרטיס */
+.card-title {
+  transition: color 0.5s, transform 0.5s;
+}
+.card:hover .card-title {
+  color: #0a74da;
+  transform: scale(1.05);
+}
+
+/* -------- Social Icons -------- */
+.container-icon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: rgb(13, 202, 240);
+}
+
+.icon,
+.icon-img,
+.icon-text {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.icon-text > a {
+  text-decoration: none;
+  color: #212529;
+}
+
+/* -------- Footer -------- */
+footer {
+  color: #fff;
+  font-size: 1rem;
+  background-color: #333;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 5px solid rgb(13, 202, 240);
+}
+footer p {
+  margin: 0;
+}
+
+/* -------- Navigation List Items -------- */
+nav ul li {
+  white-space: nowrap; /* מונע שבירת שורה */
+}
+
+/* ===== Desktop Styles (מעל 1024px) ===== */
+@media (min-width: 1025px) {
+  nav {
+    grid-template-columns: 1fr auto auto;
+  }
+  nav span {
+    display: none;
+  }
+  nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+  }
+  nav ul li {
+    margin-right: 50px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: rgb(13, 202, 240);
+  }
+  nav ul li a:hover {
+    transform: scale(5);
+    color: rgb(14, 133, 157);
+    transition: font-size 0.5s;
+    font-size: 1.3rem;
+  }
+  #page-title,
+  #about-me,
+  #cards-container,
+  #gallery-header,
+  #js-projects,
+  #contact {
+    scroll-margin-top: 145px;
+  }
+  #check-hamburger:checked {
+    display: grid;
+  }
+  #check-hamburger ~ ul {
+    display: grid;
+  }
+  .skills {
+    margin: 20px 0 30px 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    align-items: center;
+    background-color: #fff;
+  }
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container-icon {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-img-top {
+    height: 180px;
+  }
+
+  nav {
+    grid-template-columns: 1fr auto auto;
+    padding: 10px 5px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+/* __________דף מעבר מובייל_________________ */
+
+#pass-nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: start;
+}
+.pass-page-btn,
+a {
+  text-decoration: none;
+  color: black;
+}
+.project-container {
+  background-color: rgb(238, 238, 238);
+  padding: 20px;
+}
+.logo-name-pass {
+  justify-self: start;
+  padding-top: 50px;
+}
+
+.pass-page-img {
+  height: 208px;
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 0px 40px #00000066;
+  opacity: 1;
+}
+.pass-page-btn {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.skills-pass {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 1025px) {
+  .project-container {
+    background-color: rgb(238, 238, 238);
+    justify-items: auto;
+    padding: 100px;
+  }
+  .pass-page-img {
+    display: block;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 40px #00000066;
+    opacity: 1;
+  }
+}
