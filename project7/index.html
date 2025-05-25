@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Image APIs</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>NASA Image APIs</h1>
+      <p>
+        To use this service, please
+        <a href="https://api.nasa.gov/" target="_blank">register here</a> and
+        get your personal API Key.
+      </p>
+
+      <label for="apiKey">API Key:</label>
+      <input type="text" id="apiKey" placeholder="Enter your NASA API Key" />
+
+      <label for="apiSelect">Choose an API:</label>
+      <select id="apiSelect">
+        <option value="apod">Astronomy Picture of the Day (APOD)</option>
+        <option value="mars">Mars Rover Photos</option>
+        <option value="epic">EPIC Earth Photos</option>
+      </select>
+
+      <div id="datePickerContainer">
+        <label for="dateInput">Select Date:</label>
+        <input type="date" id="dateInput" />
+      </div>
+
+      <button id="fetchBtn">Fetch Image</button>
+
+      <div id="result"></div>
+    </div>
+  </body>
+</html>

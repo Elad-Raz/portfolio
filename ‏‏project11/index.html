@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather API</h1>
+      <p class="api-note">
+        השג API KEY באתר
+        <a href="https://openweathermap.org/api" target="_blank"
+          >OpenWeatherMap</a
+        >
+      </p>
+      <form id="weatherForm" autocomplete="off">
+        <label for="city">הקלד בבקשה את שם העיר בשפה העברית או אנגלית</label>
+        <div class="tooltip-wrapper">
+          <input
+            type="text"
+            id="city"
+            name="city"
+            required
+            placeholder="למשל: Springfield"
+          />
+        </div>
+        <ul id="suggestions" class="suggestions"></ul>
+
+        <label for="apiKey">🔑 מפתח API</label>
+        <input
+          type="text"
+          id="apiKey"
+          name="apiKey"
+          required
+          placeholder="הכנס את המפתח שלך כאן"
+        />
+
+        <label for="language">בחר שפה</label>
+        <select id="language">
+          <option value="he">עברית</option>
+          <option value="en">English</option>
+        </select>
+
+        <button type="submit">בדוק תחזית</button>
+        <p id="error" class="error"></p>
+      </form>
+      <div id="result"></div>
+    </div>
+  </body>
+</html>

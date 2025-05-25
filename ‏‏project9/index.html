@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>משחק זיכרון</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="start-screen">
+      <h1>ברוכים הבאים למשחק הזיכרון</h1>
+      <input type="text" id="player1" placeholder="שם שחקן 1" />
+      <input type="text" id="player2" placeholder="שם שחקן 2" />
+      <select id="level">
+        <option value="easy">קל (6 זוגות)</option>
+        <option value="medium" selected>בינוני (10 זוגות)</option>
+        <option value="hard">קשה (15 זוגות)</option>
+      </select>
+      <button id="startBtn">התחל משחק</button>
+    </div>
+
+    <div id="game-screen" class="hidden">
+      <div class="top-bar">
+        <div id="player-info">
+          <span id="turn-indicator"></span>
+          <span id="score"></span>
+        </div>
+        <div class="buttons">
+          <button id="hintBtn">רמז</button>
+          <button id="newGameBtn">משחק חדש</button>
+          <button id="menuBtn">תפריט ראשי</button>
+        </div>
+      </div>
+      <div id="game-board"></div>
+    </div>
+
+    <div id="win-screen" class="hidden">
+      <h2 id="winner-message"></h2>
+      <button id="restartBtn">משחק חדש</button>
+      <button id="menuFromWinBtn">תפריט ראשי</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #fffde7);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.api-note {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.tooltip-wrapper {
+  position: relative;
+}
+
+.tooltip-wrapper:hover .tooltip {
+  display: block;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 120px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #eee;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+.forecast {
+  display: grid;
+  gap: 15px;
+}
+
+.card {
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #aaa;
+  text-align: center;
+}
+
+canvas {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+}

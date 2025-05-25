@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>My To-Do List</h1>
+      <button id="toggle-theme">🌙</button>
+    </header>
+
+    <main>
+      <form id="task-form">
+        <input type="text" id="title" placeholder="Title" required />
+
+        <textarea id="description" placeholder="Description"></textarea>
+
+        <select id="priority">
+          <option value="" disabled selected>Select Priority</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+          <option value="Critical">Critical</option>
+        </select>
+
+        <input type="datetime-local" id="deadline" />
+
+        <div class="buttons">
+          <button type="submit">Add Task</button>
+          <button type="button" id="delete-all">Delete All</button>
+        </div>
+      </form>
+
+      <ul id="task-list"></ul>
+    </main>
+  </body>
+</html>

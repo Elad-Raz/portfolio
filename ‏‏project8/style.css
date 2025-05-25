@@ -1,0 +1,118 @@
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --card: #fff;
+  --primary: #3498db;
+}
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+  --card: #1e1e1e;
+  --primary: #9b59b6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+#toggle-theme {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+form {
+  background-color: var(--card);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea,
+select,
+button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+ul#task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+li.task {
+  background-color: var(--card);
+  border-left: 5px solid var(--primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.task .delete {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.task .restore,
+.task .remove-final {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.task.deleted {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
